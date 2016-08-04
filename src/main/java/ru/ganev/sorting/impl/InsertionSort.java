@@ -1,4 +1,4 @@
-package ru.ganev.sorting.tests;
+package ru.ganev.sorting.impl;
 
 import ru.ganev.sorting.Sort;
 import ru.ganev.sorting.SortingMode;

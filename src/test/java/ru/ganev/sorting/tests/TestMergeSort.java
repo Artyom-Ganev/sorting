@@ -3,6 +3,7 @@ package ru.ganev.sorting.tests;
 import org.junit.Test;
 import ru.ganev.sorting.AbstractSortTest;
 import ru.ganev.sorting.Sort;
+import ru.ganev.sorting.impl.MergeSort;
 
 public class TestMergeSort extends AbstractSortTest {
 
