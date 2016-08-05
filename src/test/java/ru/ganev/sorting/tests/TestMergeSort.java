@@ -2,23 +2,24 @@ package ru.ganev.sorting.tests;
 
 import org.junit.Test;
 import ru.ganev.sorting.AbstractSortTest;
-import ru.ganev.sorting.Sort;
 import ru.ganev.sorting.impl.MergeSort;
+import ru.ganev.sorting.utils.TestUtil;
+
+import static ru.ganev.sorting.SortingMode.ASCENDING;
+import static ru.ganev.sorting.SortingMode.DESCENDING;
 
 public class TestMergeSort extends AbstractSortTest {
-
-    private static final Sort SORT = MergeSort.getInstance();
 
     @Test
     @Override
     public void testAscending() {
-//        TestUtil.testAscending(SORT, 10);
+        TestUtil.testAscending(new MergeSort(ASCENDING), 99);
     }
 
     @Test
     @Override
     public void testDescending() {
-//        TestUtil.testDescending(SORT, 10);
+        TestUtil.testDescending(new MergeSort(DESCENDING), 99);
     }
 
 }

@@ -2,24 +2,24 @@ package ru.ganev.sorting.tests;
 
 import org.junit.Test;
 import ru.ganev.sorting.AbstractSortTest;
-import ru.ganev.sorting.impl.InsertionSort;
+import ru.ganev.sorting.impl.BubbleSort;
 import ru.ganev.sorting.utils.TestUtil;
 
 import static ru.ganev.sorting.SortingMode.ASCENDING;
 import static ru.ganev.sorting.SortingMode.DESCENDING;
 
-public class TestInsertionSort extends AbstractSortTest {
+public class TestBubbleSort extends AbstractSortTest {
 
     @Test
     @Override
     public void testAscending() {
-        TestUtil.testAscending(new InsertionSort(ASCENDING), 99);
+        TestUtil.testAscending(new BubbleSort(ASCENDING), 99);
     }
 
     @Test
     @Override
     public void testDescending() {
-        TestUtil.testDescending(new InsertionSort(DESCENDING), 99);
+        TestUtil.testDescending(new BubbleSort(DESCENDING), 99);
     }
 
 }

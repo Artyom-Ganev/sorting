@@ -1,6 +1,6 @@
 package ru.ganev.sorting.impl;
 
-import ru.ganev.sorting.Sort;
+import ru.ganev.sorting.AbstractSort;
 import ru.ganev.sorting.SortingMode;
 
 import static ru.ganev.sorting.utils.SortingHelper.copyArray;
@@ -9,28 +9,23 @@ import static ru.ganev.sorting.utils.SortingHelper.createComparator;
 /**
  * Implementation of insertion sort algorithm
  */
-public final class InsertionSort implements Sort {
+public final class InsertionSort extends AbstractSort {
 
-    private static final InsertionSort INSTANCE = new InsertionSort();
-
-    private InsertionSort() {
-    }
-
-    public static InsertionSort getInstance() {
-        return INSTANCE;
+    public InsertionSort(SortingMode mode) {
+        super(mode);
     }
 
     @Override
-    public int[] sort(final int[] input, final SortingMode mode) {
+    public int[] sort(final int[] input) {
         int[] array = copyArray(input);
-        for (int j = 1; j < array.length; j++) {
-            int key = array[j];
-            int i = j - 1;
-            while (i >= 0 && createComparator(mode).compare(array[i], key)) {
-                array[i + 1] = array[i];
-                array[i] = key;
-                i--;
+        for (int i = 1; i < array.length; i++) {
+            int current = array[i];
+            int prevIndex = i - 1;
+            while (prevIndex >= 0 && createComparator(this.getMode()).compare(array[prevIndex], current)) {
+                array[prevIndex + 1] = array[prevIndex];
+                prevIndex--;
             }
+            array[prevIndex + 1] = current;
         }
         return array;
     }

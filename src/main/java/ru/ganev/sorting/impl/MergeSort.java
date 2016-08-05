@@ -1,51 +1,51 @@
 package ru.ganev.sorting.impl;
 
-import ru.ganev.sorting.Sort;
+import java.util.Arrays;
+
+import ru.ganev.sorting.AbstractSort;
 import ru.ganev.sorting.SortingMode;
-import ru.ganev.sorting.utils.SortingHelper;
+
+import static ru.ganev.sorting.utils.SortingHelper.createComparator;
 
 /**
- * Implementation of merge sort algorithm
+ * Implementation of recursive merge sort algorithm
  */
-public final class MergeSort implements Sort {
+public final class MergeSort extends AbstractSort {
 
-    private static final MergeSort INSTANCE = new MergeSort();
-
-    private MergeSort() {
-    }
-
-    public static MergeSort getInstance() {
-        return INSTANCE;
+    public MergeSort(SortingMode mode) {
+        super(mode);
     }
 
     @Override
-    public int[] sort(final int[] input, final SortingMode mode) {
-        return mergeSort(SortingHelper.copyArray(input), 0, input.length - 1);
+    public int[] sort(final int[] input) {
+        int size = input.length;
+        if (size < 2) {
+            return input;
+        }
+        int mid = size / 2;
+        return merge(sort(Arrays.copyOfRange(input, 0, mid)),
+                sort(Arrays.copyOfRange(input, mid, size)));
     }
 
-    private static int[] mergeSort(int[] array, int begin, int end) {
-        if (begin < end) {
-            final int mid = (begin + end) / 2;
-            mergeSort(array, begin, mid);
-            mergeSort(array, mid + 1, end);
-            merge(array, begin, mid, end);
+    private int[] merge(int[] left, int[] right) {
+        int leftSize = left.length;
+        int rightSize = right.length;
+        int l = 0, r = 0;
+        int size = leftSize + rightSize;
+        int[] array = new int[size];
+        for (int i = 0; i < size; i++) {
+            if (r < rightSize && l < leftSize) {
+                if (createComparator(this.getMode()).compare(left[l], right[r])) {
+                    array[i] = right[r++];
+                } else {
+                    array[i] = left[l++];
+                }
+            } else if (r < rightSize) {
+                array[i] = right[r++];
+            } else {
+                array[i] = left[l++];
+            }
         }
         return array;
     }
-
-    private static void merge(int[] array, int begin, int mid, int end) {
-        final int lSize = mid - begin + 1;
-        final int rSize = end - mid;
-        int[] left = new int[lSize];
-        int[] right = new int[rSize];
-        System.arraycopy(array, begin, left, 0, lSize);
-        System.arraycopy(array, mid, right, 0, lSize);
-//        int i, j = 0;
-//        for (int k = begin; k < end; k++) {
-//            if(left[i] <= right[j]) {
-//
-//            }
-//        }
-    }
-
 }

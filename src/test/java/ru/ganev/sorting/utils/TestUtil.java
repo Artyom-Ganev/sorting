@@ -6,10 +6,11 @@ import java.util.Random;
 import ru.ganev.sorting.Sort;
 
 import static org.junit.Assert.assertArrayEquals;
-import static ru.ganev.sorting.SortingMode.DESCENDING;
-import static ru.ganev.sorting.SortingMode.ASCENDING;
 import static ru.ganev.sorting.utils.SortingHelper.copyArray;
 
+/**
+ * Sorting algorithms test utility
+ */
 public final class TestUtil {
 
     private TestUtil() {
@@ -17,12 +18,12 @@ public final class TestUtil {
 
     public static void testAscending(final Sort sort, final int size) {
         final int[] unsorted = createUnsorted(size);
-        assertArrayEquals(createAscending(unsorted), sort.sort(unsorted, ASCENDING));
+        assertArrayEquals(createAscending(unsorted), sort.sort(unsorted));
     }
 
     public static void testDescending(final Sort sort, final int size) {
         final int[] unsorted = createUnsorted(size);
-        assertArrayEquals(createDescending(unsorted), sort.sort(unsorted, DESCENDING));
+        assertArrayEquals(createDescending(unsorted), sort.sort(unsorted));
     }
 
     private static int[] createUnsorted(final int size) {
