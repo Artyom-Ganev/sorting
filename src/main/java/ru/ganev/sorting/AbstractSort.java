@@ -14,7 +14,7 @@ public abstract class AbstractSort implements Sort {
     /**
      * @return current sorting mode
      */
-    public SortingMode getMode() {
+    protected SortingMode getMode() {
         return mode;
     }
 }
