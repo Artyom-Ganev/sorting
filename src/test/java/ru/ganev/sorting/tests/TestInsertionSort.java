@@ -13,13 +13,13 @@ public class TestInsertionSort extends AbstractSortTest {
     @Test
     @Override
     public void testAscending() {
-        TestUtil.testAscending(new InsertionSort(ASCENDING), 99);
+        TestUtil.testAscending(new InsertionSort(ASCENDING));
     }
 
     @Test
     @Override
     public void testDescending() {
-        TestUtil.testDescending(new InsertionSort(DESCENDING), 99);
+        TestUtil.testDescending(new InsertionSort(DESCENDING));
     }
 
 }

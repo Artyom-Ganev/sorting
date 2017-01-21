@@ -13,12 +13,22 @@ import static ru.ganev.sorting.utils.SortingHelper.copyArray;
  */
 public final class TestUtil {
 
+    private static final int DEFAULT_SIZE = 99;
+
     private TestUtil() {
+    }
+
+    public static void testAscending(final Sort sort) {
+        testAscending(sort, DEFAULT_SIZE);
     }
 
     public static void testAscending(final Sort sort, final int size) {
         final int[] unsorted = createUnsorted(size);
         assertArrayEquals(createAscending(unsorted), sort.sort(unsorted));
+    }
+
+    public static void testDescending(final Sort sort) {
+        testDescending(sort, DEFAULT_SIZE);
     }
 
     public static void testDescending(final Sort sort, final int size) {
@@ -30,7 +40,7 @@ public final class TestUtil {
         int[] array = new int[size];
         Random random = new Random();
         for (int i = 0; i < size; i++) {
-            array[i] = random.nextInt();
+            array[i] = random.nextInt(100);
         }
         return array;
     }

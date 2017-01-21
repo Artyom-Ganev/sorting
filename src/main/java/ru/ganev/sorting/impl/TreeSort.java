@@ -5,7 +5,7 @@ import java.util.Arrays;
 import ru.ganev.sorting.AbstractSort;
 import ru.ganev.sorting.SortingMode;
 
-import static ru.ganev.sorting.utils.SortingHelper.createComparator;
+import static ru.ganev.sorting.SortingMode.ASCENDING;
 
 /**
  * Implementation of tree sort algorithm
@@ -21,17 +21,22 @@ public class TreeSort extends AbstractSort {
         Tree tree = new Tree();
         Arrays.stream(array).forEach(tree::insert);
         int[] result = new int[array.length];
-        tree.toArray(tree.root, result, 0);
+        SortingMode mode = TreeSort.this.getMode();
+        if (mode == ASCENDING) {
+            tree.incOrder(tree.root, result, 0);
+        } else {
+            tree.decOrder(tree.root, result, 0);
+        }
         return result;
     }
 
     private class Node {
-        private int value;
+        private int data;
         private Node left;
         private Node right;
 
-        private Node(int value) {
-            this.value = value;
+        private Node(int data) {
+            this.data = data;
         }
 
     }
@@ -54,7 +59,7 @@ public class TreeSort extends AbstractSort {
             Node parent;
             while (true) {
                 parent = current;
-                if (createComparator(TreeSort.this.getMode()).compare(id, current.value)) {
+                if (id < current.data) {
                     current = current.left;
                     if (current == null) {
                         parent.left = newNode;
@@ -70,14 +75,26 @@ public class TreeSort extends AbstractSort {
             }
         }
 
-        private void toArray(Node node, int[] array, int position) {
-            if (node != null) {
-                toArray(node.left, array, position);
-                array[position++] = node.value;
-                toArray(node.right, array, position);
+        private int incOrder(Node node, int[] saveTo, int index) {
+            if (node.left != null) {
+                index = incOrder(node.left, saveTo, index);
             }
+            saveTo[index++] = node.data;
+            if (node.right != null) {
+                index = incOrder(node.right, saveTo, index);
+            }
+            return index;
+        }
+
+        private int decOrder(Node node, int[] saveTo, int index) {
+            if (node.right != null) {
+                index = decOrder(node.right, saveTo, index);
+            }
+            saveTo[index++] = node.data;
+            if (node.left != null) {
+                index = decOrder(node.left, saveTo, index);
+            }
+            return index;
         }
     }
-
-
 }

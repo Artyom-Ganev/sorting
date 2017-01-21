@@ -13,13 +13,13 @@ public class TestBubbleSort extends AbstractSortTest {
     @Test
     @Override
     public void testAscending() {
-        TestUtil.testAscending(new BubbleSort(ASCENDING), 99);
+        TestUtil.testAscending(new BubbleSort(ASCENDING));
     }
 
     @Test
     @Override
     public void testDescending() {
-        TestUtil.testDescending(new BubbleSort(DESCENDING), 99);
+        TestUtil.testDescending(new BubbleSort(DESCENDING));
     }
 
 }

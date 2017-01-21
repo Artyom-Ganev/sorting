@@ -13,12 +13,12 @@ public class TestSelectionSort extends AbstractSortTest {
     @Test
     @Override
     public void testAscending() {
-        TestUtil.testAscending(new SelectionSort(ASCENDING), 99);
+        TestUtil.testAscending(new SelectionSort(ASCENDING));
     }
 
     @Test
     @Override
     public void testDescending() {
-        TestUtil.testDescending(new SelectionSort(DESCENDING), 99);
+        TestUtil.testDescending(new SelectionSort(DESCENDING));
     }
 }

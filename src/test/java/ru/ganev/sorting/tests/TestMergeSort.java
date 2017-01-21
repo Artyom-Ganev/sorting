@@ -13,13 +13,13 @@ public class TestMergeSort extends AbstractSortTest {
     @Test
     @Override
     public void testAscending() {
-        TestUtil.testAscending(new MergeSort(ASCENDING), 99);
+        TestUtil.testAscending(new MergeSort(ASCENDING));
     }
 
     @Test
     @Override
     public void testDescending() {
-        TestUtil.testDescending(new MergeSort(DESCENDING), 99);
+        TestUtil.testDescending(new MergeSort(DESCENDING));
     }
 
 }
