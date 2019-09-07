@@ -3,13 +3,15 @@ package ru.ganev.sorting.utils;
 import java.util.Arrays;
 import java.util.Random;
 
-import ru.ganev.sorting.Sort;
+import ru.ganev.sorting.ISort;
 
-import static org.junit.Assert.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static ru.ganev.sorting.utils.SortingHelper.copyArray;
 
 /**
- * Sorting algorithms test utility
+ * Sorting Algorithm test utility
+ *
+ * @author Ganev Artyom
  */
 public final class TestUtil {
 
@@ -18,20 +20,42 @@ public final class TestUtil {
     private TestUtil() {
     }
 
-    public static void testAscending(final Sort sort) {
+    /**
+     * Test ascending order sorting
+     *
+     * @param sort sorting algorithm implementation class
+     */
+    public static void testAscending(final ISort sort) {
         testAscending(sort, DEFAULT_SIZE);
     }
 
-    public static void testAscending(final Sort sort, final int size) {
+    /**
+     * Test ascending order sorting
+     *
+     * @param sort Algorithm implementation class
+     * @param size array size
+     */
+    public static void testAscending(final ISort sort, final int size) {
         final int[] unsorted = createUnsorted(size);
         assertArrayEquals(createAscending(unsorted), sort.sort(unsorted));
     }
 
-    public static void testDescending(final Sort sort) {
+    /**
+     * Test descending order sorting
+     *
+     * @param sort sorting algorithm implementation class
+     */
+    public static void testDescending(final ISort sort) {
         testDescending(sort, DEFAULT_SIZE);
     }
 
-    public static void testDescending(final Sort sort, final int size) {
+    /**
+     * Test descending order sorting
+     *
+     * @param sort sorting algorithm implementation class
+     * @param size array size
+     */
+    public static void testDescending(final ISort sort, final int size) {
         final int[] unsorted = createUnsorted(size);
         assertArrayEquals(createDescending(unsorted), sort.sort(unsorted));
     }
@@ -64,6 +88,4 @@ public final class TestUtil {
         }
         return array;
     }
-
-
 }

@@ -1,9 +1,10 @@
-This project contains implementation of main sorting algorithms:
+The Project contains Implementation of sorting Algorithms.
 
-1. Bubble sort
-2. Insertion sort
-3. Merge sort
-4. Selection sort
-5. Tree sort
+* Bubble sort
+* Insertion sort
+* Merge sort
+* Selection sort
+* Tree sort
 
-Project uses Maven 3 to build its modules (http://maven.apache.org/).
+Project uses Maven 3 (http://maven.apache.org/) to build modules and JUnit (https://junit.org/)
+to test the Implementation of Algorithms.

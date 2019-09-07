@@ -1,8 +1,13 @@
 package ru.ganev.sorting;
 
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 
-public abstract class AbstractSortTest extends Assert {
+/**
+ * Sorting test base class
+ *
+ * @author Ganev Artyom
+ */
+public abstract class AbstractSortTest extends Assertions implements ISortTest {
 
     public abstract void testAscending();
 

@@ -5,10 +5,12 @@ import java.util.Arrays;
 import ru.ganev.sorting.AbstractSort;
 import ru.ganev.sorting.SortingMode;
 
-import static ru.ganev.sorting.SortingMode.ASCENDING;
+import static ru.ganev.sorting.SortingMode.ASC;
 
 /**
- * Implementation of tree sort algorithm
+ * The Implementation of Tree sort
+ *
+ * @author Ganev Artyom
  */
 public class TreeSort extends AbstractSort {
 
@@ -22,7 +24,7 @@ public class TreeSort extends AbstractSort {
         Arrays.stream(array).forEach(tree::insert);
         int[] result = new int[array.length];
         SortingMode mode = TreeSort.this.getMode();
-        if (mode == ASCENDING) {
+        if (mode == ASC) {
             tree.incOrder(tree.root, result, 0);
         } else {
             tree.decOrder(tree.root, result, 0);

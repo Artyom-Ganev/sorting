@@ -1,9 +1,19 @@
 package ru.ganev.sorting;
 
 /**
- * Sort modes enum
+ * Sorting mode enum
+ *
+ * @author Ganev Artyom
  */
 public enum SortingMode {
 
-    ASCENDING, DESCENDING
+    /**
+     * Ascending order
+     */
+    ASC,
+
+    /**
+     * Descending order
+     */
+    DESC
 }
