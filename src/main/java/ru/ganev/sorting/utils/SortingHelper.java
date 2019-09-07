@@ -5,6 +5,8 @@ import ru.ganev.sorting.SortingMode;
 
 /**
  * Sorting helper class
+ *
+ * @author Ganev Artyom
  */
 public final class SortingHelper {
 
@@ -12,17 +14,17 @@ public final class SortingHelper {
     }
 
     /**
-     * Returns lamda-expression suitable for sorting mode
+     * Returns lambda-expression suitable for sorting mode
      *
      * @param mode comparison mode from {@link ru.ganev.sorting.SortingMode} enum
-     * @return lamda-expression implementing {@link ru.ganev.sorting.IntegerComparator#compare(int, int)}
+     * @return lambda-expression implementing {@link ru.ganev.sorting.IntegerComparator#compare(int, int)}
      */
     public static IntegerComparator createComparator(SortingMode mode) {
         switch (mode) {
-            case ASCENDING: {
+            case ASC: {
                 return (o1, o2) -> o1 > o2;
             }
-            case DESCENDING: {
+            case DESC: {
                 return (o1, o2) -> o1 < o2;
             }
             default:

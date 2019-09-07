@@ -8,7 +8,9 @@ import ru.ganev.sorting.SortingMode;
 import static ru.ganev.sorting.utils.SortingHelper.createComparator;
 
 /**
- * Implementation of recursive merge sort algorithm
+ * The Implementation of Merge sort
+ *
+ * @author Ganev Artyom
  */
 public final class MergeSort extends AbstractSort {
 

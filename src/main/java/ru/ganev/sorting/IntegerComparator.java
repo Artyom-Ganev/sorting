@@ -1,5 +1,10 @@
 package ru.ganev.sorting;
 
+/**
+ * Functional Interface for integers comparision
+ *
+ * @author Ganev Artyom
+ */
 @FunctionalInterface
 public interface IntegerComparator {
 

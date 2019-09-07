@@ -7,7 +7,9 @@ import static ru.ganev.sorting.utils.SortingHelper.copyArray;
 import static ru.ganev.sorting.utils.SortingHelper.createComparator;
 
 /**
- * Implementation of bubble sort algorithm
+ * The Implementation of Bubble sort
+ *
+ * @author Ganev Artyom
  */
 public class BubbleSort extends AbstractSort {
 

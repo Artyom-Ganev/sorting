@@ -7,7 +7,9 @@ import static ru.ganev.sorting.utils.SortingHelper.copyArray;
 import static ru.ganev.sorting.utils.SortingHelper.createComparator;
 
 /**
- * Implementation of insertion sort algorithm
+ * The Implementation of Insertion sort
+ *
+ * @author Ganev Artyom
  */
 public final class InsertionSort extends AbstractSort {
 
