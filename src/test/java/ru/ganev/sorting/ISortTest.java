@@ -7,12 +7,12 @@ package ru.ganev.sorting;
  */
 public interface ISortTest {
     /**
-     * Test ascending order sorting
+     * Test Sort in ascending order
      */
     void testAscending();
 
     /**
-     * Test descending order sorting
+     * Test Sort in descending order
      */
     void testDescending();
 }
