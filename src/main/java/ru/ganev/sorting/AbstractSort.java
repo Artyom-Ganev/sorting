@@ -1,5 +1,10 @@
 package ru.ganev.sorting;
 
+/**
+ * Sorting Algorithm base class
+ *
+ * @author Ganev Artyom
+ */
 public abstract class AbstractSort implements ISort {
 
     private final SortingMode mode;
