@@ -17,7 +17,7 @@ public final class SortingHelper {
      * Returns lambda-expression suitable for sorting mode
      *
      * @param mode comparison mode from {@link ru.ganev.sorting.SortingMode} enum
-     * @return lamda-expression implementing {@link ru.ganev.sorting.IntegerComparator#compare(int, int)}
+     * @return lambda-expression implementing {@link ru.ganev.sorting.IntegerComparator#compare(int, int)}
      */
     public static IntegerComparator createComparator(SortingMode mode) {
         switch (mode) {
