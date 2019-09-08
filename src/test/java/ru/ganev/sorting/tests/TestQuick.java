@@ -3,6 +3,11 @@ package ru.ganev.sorting.tests;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import ru.ganev.sorting.AbstractTest;
+import ru.ganev.sorting.TestUtil;
+import ru.ganev.sorting.impl.Quick;
+
+import static ru.ganev.sorting.Mode.ASC;
+import static ru.ganev.sorting.Mode.DESC;
 
 /**
  * Quick sort Test
@@ -13,15 +18,13 @@ import ru.ganev.sorting.AbstractTest;
 public class TestQuick extends AbstractTest {
     @Test
     @Override
-    @Disabled("In work")
     public void testAscending() {
-//        TestUtil.testAscending(new QuickSort(ASC));
+        TestUtil.testAscending(new Quick(ASC));
     }
 
     @Test
     @Override
-    @Disabled("In work")
     public void testDescending() {
-//        TestUtil.testDescending(new QuickSort(DESC));
+        TestUtil.testDescending(new Quick(DESC));
     }
 }

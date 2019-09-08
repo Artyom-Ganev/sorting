@@ -7,6 +7,7 @@ import ru.ganev.sorting.ISort;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static ru.ganev.sorting.Helper.copyArray;
+import static ru.ganev.sorting.Helper.swap;
 
 /**
  * Sorting Algorithm test utility
@@ -84,9 +85,7 @@ public final class TestUtil {
         int i = array.length - 1;
         int j = 0;
         while (i >= (array.length / 2)) {
-            final int t = array[i];
-            array[i] = array[j];
-            array[j] = t;
+            swap(array, i, j);
             i--;
             j++;
         }
