@@ -37,7 +37,7 @@ public final class Merge extends Abstract {
         int[] array = new int[size];
         for (int i = 0; i < size; i++) {
             if (r < rightSize && l < leftSize) {
-                if (createComparator(this.getMode()).compare(left[l], right[r])) {
+                if (this.compare(left[l], right[r])) {
                     array[i] = right[r++];
                 } else {
                     array[i] = left[l++];

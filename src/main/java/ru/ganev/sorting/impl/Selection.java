@@ -25,7 +25,7 @@ public class Selection extends Abstract {
         for (int out = 0; out < len - 1; out++) {
             int start = out;
             for (int in = out + 1; in < len; in++) {
-                if (createComparator(this.getMode()).compare(array[start], array[in])) {
+                if (this.compare(array[start], array[in])) {
                     start = in;
                 }
             }

@@ -23,7 +23,7 @@ public class Bubble extends Abstract {
         int[] array = copyArray(input);
         for (int out = array.length - 1; out > 1; out--) {
             for (int in = 0; in < out; in++) {
-                if (createComparator(this.getMode()).compare(array[in], array[in + 1])) {
+                if (this.compare(array[in], array[in + 1])) {
                     swap(array, in, in + 1);
                 }
             }

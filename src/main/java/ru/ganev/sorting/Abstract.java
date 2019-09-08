@@ -1,5 +1,7 @@
 package ru.ganev.sorting;
 
+import static ru.ganev.sorting.Helper.createComparator;
+
 /**
  * Sorting Algorithm base class
  *
@@ -21,5 +23,16 @@ public abstract class Abstract implements ISort {
      */
     protected Mode getMode() {
         return mode;
+    }
+
+    /**
+     * Compare to values with Comparator appropriate to current sorting mode
+     *
+     * @param value1 first value
+     * @param value2 second value
+     * @return comparision result
+     */
+    protected boolean compare(final int value1, final int value2) {
+        return createComparator(this.getMode()).compare(value1, value2);
     }
 }

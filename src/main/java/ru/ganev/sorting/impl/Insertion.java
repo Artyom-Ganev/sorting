@@ -23,7 +23,7 @@ public final class Insertion extends Abstract {
         for (int out = 1; out < array.length; out++) {
             int current = array[out];
             int in = out - 1;
-            while (in >= 0 && createComparator(this.getMode()).compare(array[in], current)) {
+            while (in >= 0 && this.compare(array[in], current)) {
                 array[in + 1] = array[in];
                 in--;
             }

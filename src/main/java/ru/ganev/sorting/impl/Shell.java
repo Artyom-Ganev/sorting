@@ -4,7 +4,6 @@ import ru.ganev.sorting.Abstract;
 import ru.ganev.sorting.Mode;
 
 import static ru.ganev.sorting.Helper.copyArray;
-import static ru.ganev.sorting.Helper.createComparator;
 
 /**
  * The Implementation of Shell sort
@@ -25,7 +24,7 @@ public class Shell extends Abstract {
             for (int outer = interval; outer < len; outer++) {
                 int tmp = array[outer];
                 int inner = outer;
-                while ((inner > interval - 1) && createComparator(this.getMode()).compare(array[inner - interval], tmp)) {
+                while ((inner > interval - 1) && this.compare(array[inner - interval], tmp)) {
                     array[inner] = array[inner - interval];
                     inner -= interval;
                 }
