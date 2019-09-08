@@ -2,19 +2,19 @@ package ru.ganev.sorting.impl;
 
 import java.util.Arrays;
 
-import ru.ganev.sorting.AbstractSort;
-import ru.ganev.sorting.SortingMode;
+import ru.ganev.sorting.Abstract;
+import ru.ganev.sorting.Mode;
 
-import static ru.ganev.sorting.utils.SortingHelper.createComparator;
+import static ru.ganev.sorting.Helper.createComparator;
 
 /**
  * The Implementation of Merge sort
  *
  * @author Ganev Artyom
  */
-public final class MergeSort extends AbstractSort {
+public final class Merge extends Abstract {
 
-    public MergeSort(SortingMode mode) {
+    public Merge(Mode mode) {
         super(mode);
     }
 
@@ -37,7 +37,7 @@ public final class MergeSort extends AbstractSort {
         int[] array = new int[size];
         for (int i = 0; i < size; i++) {
             if (r < rightSize && l < leftSize) {
-                if (createComparator(this.getMode()).compare(left[l], right[r])) {
+                if (this.compare(left[l], right[r])) {
                     array[i] = right[r++];
                 } else {
                     array[i] = left[l++];

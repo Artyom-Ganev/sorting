@@ -5,7 +5,7 @@ package ru.ganev.sorting;
  *
  * @author Ganev Artyom
  */
-public enum SortingMode {
+public enum Mode {
 
     /**
      * Ascending order

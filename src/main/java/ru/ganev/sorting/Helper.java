@@ -1,25 +1,22 @@
-package ru.ganev.sorting.utils;
-
-import ru.ganev.sorting.IntegerComparator;
-import ru.ganev.sorting.SortingMode;
+package ru.ganev.sorting;
 
 /**
  * Sorting helper class
  *
  * @author Ganev Artyom
  */
-public final class SortingHelper {
+public final class Helper {
 
-    private SortingHelper() {
+    private Helper() {
     }
 
     /**
      * Returns lambda-expression suitable for sorting mode
      *
-     * @param mode comparison mode from {@link ru.ganev.sorting.SortingMode} enum
+     * @param mode comparison mode from {@link Mode} enum
      * @return lambda-expression implementing {@link ru.ganev.sorting.IntegerComparator#compare(int, int)}
      */
-    public static IntegerComparator createComparator(SortingMode mode) {
+    public static IntegerComparator createComparator(Mode mode) {
         switch (mode) {
             case ASC: {
                 return (o1, o2) -> o1 > o2;
@@ -42,5 +39,21 @@ public final class SortingHelper {
         int[] array = new int[input.length];
         System.arraycopy(input, 0, array, 0, input.length);
         return array;
+    }
+
+    /**
+     * Swap two array values
+     *
+     * @param array  source array
+     * @param index1 first value index
+     * @param index2 second value index
+     */
+    public static void swap(final int[] array, final int index1, final int index2) {
+        if (index1 != index2) {
+            // should swap only if indexes are different
+            final int t = array[index1];
+            array[index1] = array[index2];
+            array[index2] = t;
+        }
     }
 }

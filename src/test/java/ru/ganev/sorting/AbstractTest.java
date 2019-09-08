@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Assertions;
  *
  * @author Ganev Artyom
  */
-public abstract class AbstractSortTest extends Assertions implements ISortTest {
+public abstract class AbstractTest extends Assertions implements ISortTest {
 
     public abstract void testAscending();
 
