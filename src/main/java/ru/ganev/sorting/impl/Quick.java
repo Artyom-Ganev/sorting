@@ -1,15 +1,15 @@
 package ru.ganev.sorting.impl;
 
-import ru.ganev.sorting.AbstractSort;
-import ru.ganev.sorting.SortingMode;
+import ru.ganev.sorting.Abstract;
+import ru.ganev.sorting.Mode;
 
 /**
  * The Implementation of Quick sort
  *
  * @author Ganev Artyom
  */
-public class QuickSort extends AbstractSort {
-    public QuickSort(SortingMode mode) {
+public class Quick extends Abstract {
+    public Quick(Mode mode) {
         super(mode);
     }
 

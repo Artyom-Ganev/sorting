@@ -1,4 +1,4 @@
-package ru.ganev.sorting.utils;
+package ru.ganev.sorting;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -6,7 +6,7 @@ import java.util.Random;
 import ru.ganev.sorting.ISort;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static ru.ganev.sorting.utils.SortingHelper.copyArray;
+import static ru.ganev.sorting.Helper.copyArray;
 
 /**
  * Sorting Algorithm test utility
@@ -15,7 +15,7 @@ import static ru.ganev.sorting.utils.SortingHelper.copyArray;
  */
 public final class TestUtil {
 
-    private static final int DEFAULT_SIZE = 99;
+    private static final int DEFAULT_SIZE = 20;
 
     private TestUtil() {
     }
@@ -37,7 +37,9 @@ public final class TestUtil {
      */
     public static void testAscending(final ISort sort, final int size) {
         final int[] unsorted = createUnsorted(size);
-        assertArrayEquals(createAscending(unsorted), sort.sort(unsorted));
+        final int[] sorted = sort.sort(unsorted);
+        TestUtil.print("Ascending", unsorted, sorted);
+        assertArrayEquals(createAscending(unsorted), sorted);
     }
 
     /**
@@ -57,7 +59,9 @@ public final class TestUtil {
      */
     public static void testDescending(final ISort sort, final int size) {
         final int[] unsorted = createUnsorted(size);
-        assertArrayEquals(createDescending(unsorted), sort.sort(unsorted));
+        final int[] sorted = sort.sort(unsorted);
+        TestUtil.print("Descending", unsorted, sorted);
+        assertArrayEquals(createDescending(unsorted), sorted);
     }
 
     private static int[] createUnsorted(final int size) {
@@ -87,5 +91,11 @@ public final class TestUtil {
             j++;
         }
         return array;
+    }
+
+    private static void print(final String title, final int[] unsorted, final int[] sorted) {
+        System.out.println(String.format("----- %s -----", title));
+        System.out.println(String.format("unsorted: %s", Arrays.toString(unsorted)));
+        System.out.println(String.format("sorted: %s", Arrays.toString(sorted)));
     }
 }
